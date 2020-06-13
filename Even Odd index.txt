@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,i,ce=0,co=0;
+    cin>>n;
+    int ar[n];
+    for(i=0;i<n;i++){
+        cin>>ar[i];
+    }
+    for(i=0;i<n;i++){
+        if((i%2==0) && (ar[i]%2==0)){
+            ce=ce+ar[i];
+        }
+        else if((i%2!=0) && (ar[i]%2!=0)){
+            co=co+ar[i];
+        }
+        }
+    
+    cout<<ce<<" "<<co<<endl;
+	return 0;
+}

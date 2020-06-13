@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+#include<algorithm>
+using namespace std;
+//using namespace std::max_elemnt;
+//using namespace std::min_elemnt;
+//using namespace std::distance;
+int main() {
+    int n,i,min,max,max_ind,min_new=0,lar=0,j;
+    cin>>n;
+    int ar[n];
+    for(i=0;i<n;i++){
+        cin>>ar[i];
+    }
+    //Find the max,min and their indexes of the array
+    const int N=sizeof(ar)/sizeof(ar[0]);
+    max=*max_element(ar,ar+N);
+    //min=*min_elelment(ar,ar+N);
+    //int *m=max_element(ar,ar+N);
+    //int max_ind=*m-sizeof(ar);
+    //min_ind=std::distance(ar,min);
+    //if the index of min<max means it occured before max and max_prof=max-min
+   	for(i=0;i<n;i++){
+        if(ar[i]==max){
+            max_ind=i;
+        }
+        
+    }
+   
+    
+        for(i=1;i<n;i++){
+            for(j=i+1;j<n;j++){
+                if(lar<ar[j]-ar[i]){
+                    lar=ar[j]-ar[i];
+                }
+                
+            }
+        }
+        cout<<lar;
+    
+    
+    
+
+	// Write your code here
+}
