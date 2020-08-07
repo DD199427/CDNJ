@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;int time=INT_MAX;int tru_time=0,min=100000;
+    cin>>n;
+    int booths[n],times[n];
+    for(int i=0;i<n;i++){
+        cin>>booths[i];
+    }
+    for(int i=0;i<n;i++){
+        times[i]=(booths[i]-i)/n;
+		
+        if((((booths[i]-i))%n)!=0)
+        {
+            times[i]++;
+        }
+        if(booths[i]-i<0){
+            times[i]=0;
+        }
+        // if(times[i]<min){
+        //     min=times[i];
+        // }
+        times[i]=i+(times[i]*n);
+        
+        if(time>times[i]){
+            time=times[i];
+            tru_time=i+1;
+        }
+        
+    }
+    cout<<tru_time;
+    // if((booths[tru_time]-tru_time)%n==0){
+    //     cout<<tru_time<<endl;
+    // }
+    // else{
+    //     cout<<tru_time+1<<endl;
+    // }
+    
+
+  
+   return 0;
+}

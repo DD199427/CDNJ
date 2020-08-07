@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long n,x,y,zreo_grp=0,zeroes=0,k=0;
+    cin>>n>>x>>y;
+    char str[n];
+    for(int i=0;i<n;i++){
+        cin>>str[i];
+    }
+    for(int i=0;i<n;i++){
+        if(str[i]=='0'){
+            zeroes+=1;
+        }
+    }
+    if(str[0]=='0'){
+        zreo_grp+=1;
+    }
+    
+    for(int i=1;i<n;i++){
+        
+     
+        if((str[i]=='0' && str[i-1]=='1' )){
+            zreo_grp+=1;
+            
+        }
+    }
+    if(zreo_grp==0){
+        if(zeroes==n){
+            cout<<y<<endl;
+        }
+        else{
+            cout<<0<<endl;
+        }
+        
+    }
+    else{
+        cout<<((zreo_grp-1)*min(x,y))+y<<endl;
+    }
+    
+    
+	return 0;
+}
